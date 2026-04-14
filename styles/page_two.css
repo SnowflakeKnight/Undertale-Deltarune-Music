@@ -1,0 +1,64 @@
+/*
+Name: Sunia Rizwan
+Date: 3/31/2026
+Description: Css Stylesheet Design for pages | Final Project
+*/
+
+ul li  {
+    margin-bottom: 2.5%;
+}
+
+audio{
+    padding-top: 5%;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-style: double;
+  
+}
+
+
+td{
+    font-size: large;
+    text-align: center;
+    width: 300px;
+}
+
+input, select, button {
+    font-size: inherit;
+    padding: .1em;
+    margin-bottom: .5em;
+    border-radius: 5px;
+}
+label {
+    display: block;
+}
+input, select {
+    width: 50%;
+}
+
+button{
+    background-color: black;
+    color: white;
+}
+
+/*media query for a maximum screen width of 640 pixels*/
+@media only screen and (max-width: 640px){
+    th, td { 
+        display:flex; 
+    }
+
+    td audio{
+        display: flex;
+    }
+
+
+
+    /*For each table row, set a display value of flex and enable wrapping.*/
+    
+
+    table{
+        margin: auto;
+    }
+}

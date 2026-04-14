@@ -1,0 +1,188 @@
+/*
+Name: Sunia Rizwan
+Date: 4/14/2026
+Description: Css Stylesheet Design for the menu | Final Project
+*/
+
+.menu li:has(.submenu){
+    position: relative;
+    & small::after{
+        content: "\25b6";
+    }
+    & small{
+        margin-left: .25em;
+    }
+    &:hover > .submenu {
+        display: block;
+    }
+}
+
+.menu {
+    display: none;
+    flex-wrap: wrap;
+    position: absolute;
+    left: 0;
+
+    img{
+        width: 4px;
+        display: flex;
+        padding-right: 25px;
+        
+    }
+    
+} 
+
+
+
+.navbar {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    position: relative;
+}
+
+
+.submenu{
+    position: absolute;
+    display: none;
+
+} 
+
+
+
+#checkbox-toggle { 
+    display: none; 
+}
+
+.menu-btn {
+    display: block;
+    padding: 0.25em 1em;
+    color: white;
+    font-size: 24px;
+}
+
+.menu-btn::after { 
+    content: "\2630"; 
+
+}
+
+#checkbox-toggle:checked ~ .menu {
+    display: block;    
+}
+
+#checkbox-toggle:checked ~ .menu .submenu{
+/*Position the submenu to the right of the menu item*/
+    top: 0;
+    left: 100%;
+    position: absolute;
+    
+    
+}
+
+#checkbox-toggle:checked ~ .menu-btn::after {
+    content: "\2716";
+}
+
+
+/*
+.menu ul {
+    display: flex;
+    
+}*/
+
+.menu ul{
+    display: flex;
+ }
+
+.navbar ul{
+    background-color: black;
+    list-style-type: none;
+    margin: 0em 0em .2em;
+    padding: 0;
+    
+    flex-wrap: wrap;
+    
+}
+
+.navbar li{
+    padding: .2em 1em;
+}
+
+.navbar ul li :hover{
+    background-color: white;
+    color:black
+} 
+.navbar ul li a {
+  display: block;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-size: medium;
+}
+
+a.current{
+    color: red;
+    font-weight: bold;
+}
+
+audio{
+    display: flex;
+}
+
+/*media query for medium & large screen sizes*/
+@media only screen and (min-width: 800px){
+    .menu{
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+    }
+
+
+    .menu li:has(.submenu){
+        position: relative; 
+        & small{
+            margin-left: .25em;
+        }
+        &:hover>.submenu{
+            display: flex;
+        }
+    }
+
+    .submenu{
+        position: absolute; 
+        top: 100%;
+        left: 0;
+        display: none;
+        background-color: black;
+        color: white;
+        flex-direction: column;
+    }
+
+     .menu li:has(.submenu) small::after {
+        content: "\25bc";
+        
+    }
+    
+
+    #checkbox-toggle:checked ~ .menu {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .menu-btn { display: none; }
+    
+    main{
+        flex-direction: row;
+    }
+    
+    section{
+        order: 1;
+    }
+
+    aside{
+        order: 2;
+    }
+}
